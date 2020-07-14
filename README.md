@@ -1,4 +1,4 @@
-## Senario 1
+## Scenario 1
 A data scientist finishes his local experiments and wants to continue working on another new device, or shares his experiments with others.
 
 #### Packaging an environment has never been easier
@@ -41,7 +41,7 @@ dependencies:
         - jtest
 ```
 
-## Senario 2
+## Scenario 2
 A data scientist wants to start working on an existing repo without worrying about environment setup, dependency installations, etc.
 
 #### Re-create a ML repository's environment
@@ -115,7 +115,7 @@ Then the user will be either directed to open a Codespace tab online, or be aske
 > Or alternatively, you can open link: https://codespaces.com/editor/tichx/12323asdf3
 ```
 
-## Senario 3
+## Scenario 3
 A data scientist Sarah wants to use her framework of choice to track training, logs, and eventually commits and pushes the repo up to GitHub again for sharing and remote working.
 #### Step by step tutorial (Wine quality prediction)
 1. After Sarah has set up a working environment as illustrated in Senario 2, she then wants to run some training scripts. In this experiment, she wants to use _random forest_ tree to predict wine quality, and uses __mlflow__ to track the experiment. In her current folder, she has the following items:
@@ -135,7 +135,7 @@ A data scientist Sarah wants to use her framework of choice to track training, l
    ```
    python random_forest.py
    ```
-  
+
 
 3. The metrics and artifacts are stored in the specific folders under the local project folder ```mlflow/examples/h2o/mlruns/```.
 
@@ -146,6 +146,7 @@ A data scientist Sarah wants to use her framework of choice to track training, l
 4. Sarah then wants to visualize and compare different runs' results on her local dashboard. To do so, she would run in CLI ```mlflow ui``` which will then host an mlflow GUI dashboard at ```http://localhost:5000```.
 
    ![images-local-dashboard](_assets/JupyterNotebookFlow/step4.png)
+
    > Under the "Experiment" tab, she will find 5 runs that she just finished.
 
 5. After several iterations, she's satisfied with the model. Now she wants to push the project into her GitHub repo so that she can continue working on her laptop when she's back to home. 
@@ -185,7 +186,7 @@ A data scientist Sarah wants to use her framework of choice to track training, l
     $ git add . 
     $ git commit -m "packaged env"
     $ git push
-    ``` 
+    ```
     In case of forgetting this step, she will also see a reminder on GitHub Action since any commit push is a part of automatic workflow that triggers detection of environment changes.
 
 
@@ -196,15 +197,15 @@ A data scientist Sarah wants to use her framework of choice to track training, l
       
       - Then, jumping to __Experiments__, each experiment is shown in the grid. To investigate a specific experiement, she can click on the experiment ID, which will directs her to the deatil page.
       ![image-github-insights](_assets/JupyterNotebookFlow/screen2.png)
-     
+       
       -  Here, she can customize the charts and find key information about this run.
       ![image-github-insights](_assets/JupyterNotebookFlow/screen3.png)
-     
+        
       - Also, hyperameters will be documented here with the help of metadata service record.
       ![image-github-insights](_assets/JupyterNotebookFlow/screen4.png)
-     
+       
       - Additionaly, an output and log page will allows her to see the experinment-specific outputs directly at the repo.
       ![image-github-insights](_assets/JupyterNotebookFlow/screen5.png)
-     
+
 
 9. She can also use GitHub actions to trigger a run using the same environment on another compute target (from cloud or on-prem) and visualize results under Insights.
